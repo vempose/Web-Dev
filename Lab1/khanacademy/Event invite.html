@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Project: Event invite</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                min-height: 100vh;
+                text-align: center;
+            }
+
+            .invite-container {
+                background-color: #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                max-width: 600px;
+                width: 90%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                height: fit-content;
+            }
+
+            h1 {
+                font-family: Georgia, serif;
+                color: #333;
+                font-size: 3em;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-family: Georgia, serif;
+                color: #555;
+                font-size: 1.8em;
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+
+            p {
+                color: #666;
+                font-size: 1.1em;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            ul li {
+                color: #444;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                display: inline-block;
+                width: 100%;
+            }
+
+            .rsvp-button {
+                background-color: #4caf50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 1.2em;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 8px;
+                /* Removed transition */
+            }
+
+            .rsvp-button:hover {
+                background-color: #45a049;
+            }
+
+            .footer-text {
+                margin-top: 30px;
+                font-size: 0.9em;
+                color: #888;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="invite-container">
+            <h1>You're invited!</h1>
+            <h2>To Our Grand Spring Gala!</h2>
+
+            <p>
+                Join us for an enchanting evening of music, delectable cuisine,
+                and delightful company as we celebrate the arrival of spring!
+            </p>
+
+            <h3>Event Details:</h3>
+            <ul>
+                <li><strong>Date:</strong> Saturday, April 20th, 2026</li>
+                <li><strong>Time:</strong> 7:00 PM - 11:00 PM</li>
+                <li>
+                    <strong>Location:</strong> The Grand Ballroom, City
+                    Convention Center
+                </li>
+                <li><strong>Dress Code:</strong> Semi-Formal</li>
+            </ul>
+
+            <p>We can't wait to celebrate with you!</p>
+
+            <button
+                class="rsvp-button"
+                onclick="
+                    alert(
+                        'Thank you for your RSVP! This is a placeholder for a real RSVP form.',
+                    )
+                "
+            >
+                RSVP Now
+            </button>
+
+            <p class="footer-text">
+                Please RSVP by April 10th, 2026, so we can finalize
+                arrangements.
+            </p>
+        </div>
+    </body>
+</html>
