@@ -142,7 +142,6 @@ nav a {
     padding: 0 24px 80px;
     max-width: 1280px;
     margin: 0 auto;
-    background: radial-gradient(circle at 50% 0%, #f6f8fa 0%, #ffffff 70%);
 }
 
 .card {
