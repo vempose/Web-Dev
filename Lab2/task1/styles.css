@@ -175,6 +175,7 @@ footer {
 .languages a {
     color: #8a8d91;
     text-decoration: none;
+    align-items: center;
 }
 
 .languages a:hover {
