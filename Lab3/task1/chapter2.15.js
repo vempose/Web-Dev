@@ -4,7 +4,7 @@ function checkAge(age) {
     return true;
   } else {
     // ...
-    return confirm('Did parents allow you?');
+    return confirm("Did parents allow you?");
   }
 }
 
@@ -13,23 +13,20 @@ function checkAge(age) {
     return true;
   }
   // ...
-  return confirm('Did parents allow you?');
+  return confirm("Did parents allow you?");
 }
 
 // --> No difference!
 
-
 // Rewrite the function using '?' or '||'
 function checkAge(age) {
-  return (age > 18) ? true : confirm('Did parents allow you?');
+  return age > 18 ? true : confirm("Did parents allow you?");
 }
-
 
 // Function min(a, b)
 function min(a, b) {
   return a < b ? a : b;
 }
-
 
 // Function pow(x,n)
 function pow(x, n) {
@@ -42,11 +39,11 @@ function pow(x, n) {
   return result;
 }
 
-let x = prompt("x?", '');
-let n = prompt("n?", '');
+let x = prompt("x?", "");
+let n = prompt("n?", "");
 
 if (n < 1) {
   alert(`Power ${n} is not supported, use a positive integer`);
 } else {
-  alert( pow(x, n) );
+  alert(pow(x, n));
 }

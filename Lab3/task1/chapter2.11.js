@@ -1,50 +1,40 @@
-alert( null || 2 || undefined ) // 2
+alert(null || 2 || undefined); // 2
 
+alert(alert(1) || 2 || alert(3)); // first 1, then 2
 
-alert( alert(1) || 2 || alert(3) ) // first 1, then 2
+alert(1 && null && 2); // null
 
+alert(alert(1) && alert(2)); // 1, and then undefined
 
-alert( 1 && null && 2 ) // null
-
-
-alert( alert(1) && alert(2) ) // 1, and then undefined
-
-
-alert( null || 2 && 3 || 4 ) // 3
-
+alert(null || (2 && 3) || 4); // 3
 
 // Check the range between
 if (age >= 14 && age <= 90);
 
-
 // Check the range outside
 if (age < 14 || age > 90);
 
-
 // A question about "if"
-if (-1 || 0) alert( 'first' );
-if (-1 && 0) alert( 'second' );
-if (null || -1 && 1) alert( 'third' );
+if (-1 || 0) alert("first");
+if (-1 && 0) alert("second");
+if (null || (-1 && 1)) alert("third");
 // the first and the third will execute
 
-
 // Check the login
-let userName = prompt("Who's there?", '');
+let userName = prompt("Who's there?", "");
 
-if (userName === 'Admin') {
+if (userName === "Admin") {
+  let pass = prompt("Password?", "");
 
-  let pass = prompt('Password?', '');
-
-  if (pass === 'TheMaster') {
-    alert( 'Welcome!' );
-  } else if (pass === '' || pass === null) {
-    alert( 'Canceled' );
+  if (pass === "TheMaster") {
+    alert("Welcome!");
+  } else if (pass === "" || pass === null) {
+    alert("Canceled");
   } else {
-    alert( 'Wrong password' );
+    alert("Wrong password");
   }
-
-} else if (userName === '' || userName === null) {
-  alert( 'Canceled' );
+} else if (userName === "" || userName === null) {
+  alert("Canceled");
 } else {
-  alert( "I don't know you" );
+  alert("I don't know you");
 }
