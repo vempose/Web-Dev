@@ -90,6 +90,7 @@ form {
     border-bottom-left-radius: 0.7rem;
     border-bottom-right-radius: 0.7rem;
     border-bottom: 1px solid #b9b9b9;
+    margin-bottom: 1rem;
 }
 
 #todo-list li > :is(input[type=checkbox], img) {
