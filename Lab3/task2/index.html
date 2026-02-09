@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple ToDo List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Simple ToDo List</h1>
+    </header>
+
+    <div id="trunk">
+        <main>
+            <header>ToDo List</header>
+
+            <form id="add-tasks">
+                <input id="draft-area" type="text" placeholder="New Task" autocomplete="off" autofocus required>
+                <input id="add-button" type="submit" value="Add">
+            </form>
+
+            <ul id="todo-list"></ul>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
