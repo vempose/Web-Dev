@@ -18,7 +18,7 @@ body > header {
 }
 
 #trunk {
-    padding-top: 4rem;
+    padding-top: 3rem;
     align-items: center;
 }
 
@@ -36,7 +36,7 @@ main > header {
 form {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 1.7rem;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -48,6 +48,7 @@ form {
     border: 1px solid #b9b9b9;
     border-radius: 0.35rem;
     padding: 0.5rem 1rem;
+    flex-grow: 1;
 }
 
 #draft-area:focus {
@@ -62,6 +63,7 @@ form {
     color: white;
     border: none;
     border-radius: 0.5rem;
+    flex-grow: 1;
 }
 
 #add-button:hover {
