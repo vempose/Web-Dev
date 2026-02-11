@@ -11,7 +11,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body > header {
+body>header {
     background-color: #0095FF;
     padding: 1rem 1.5rem;
     color: white;
@@ -28,7 +28,7 @@ main {
     padding: 0 1rem;
 }
 
-main > header {
+main>header {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -49,6 +49,7 @@ form {
     border-radius: 0.35rem;
     padding: 0.5rem 1rem;
     flex-grow: 1;
+    min-width: 8rem;
 }
 
 #draft-area:focus {
@@ -56,19 +57,40 @@ form {
     outline: none;
 }
 
-#add-button {
+#buttons {
+    flex-grow: 1;
+    display: flex;
+    gap: 0.2rem;
+    justify-content: space-between;
+}
+
+.button {
     font-size: 1rem;
     padding: 0.3rem 0.75rem;
-    background-color: #4b9fea;
     color: white;
     border: none;
     border-radius: 0.5rem;
     flex-grow: 1;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
+#add-button {
+    background-color: #4b9fea;
+}
+
+#clear-button {
+    background-color: #ff5757;
+}
+
 #add-button:hover {
     background-color: #3294eb;
-    cursor: pointer;
+}
+
+#clear-button:hover {
+    background-color: #e44d4d;
 }
 
 #todo-list li {
@@ -95,25 +117,25 @@ form {
     margin-bottom: 1rem;
 }
 
-#todo-list li > :is(input[type=checkbox], img) {
+#todo-list li> :is(input[type=checkbox], img) {
     flex: 0;
 }
 
-#todo-list li > span {
+#todo-list li>span {
     flex-basis: 90%;
     font-size: 0.8rem;
     padding: 0.5rem 0;
 }
 
-li > input[type=checkbox] {
+li>input[type=checkbox] {
     padding: 1rem;
 }
 
-li > input[type=checkbox]:checked {
+li>input[type=checkbox]:checked {
     accent-color: #438fd1;
 }
 
-li.completed > span {
+li.completed>span {
     text-decoration: line-through;
 }
 

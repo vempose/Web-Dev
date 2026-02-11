@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Simple ToDo List</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <h1>Simple ToDo List</h1>
@@ -17,7 +19,10 @@
 
             <form id="add-tasks">
                 <input id="draft-area" type="text" placeholder="New Task" autocomplete="off" autofocus required>
-                <input id="add-button" type="submit" value="Add">
+                <div id="buttons">
+                    <input class="button" id="add-button" type="submit" value="Add">
+                    <input class="button" id="clear-button" type="button" value="Clear All" onclick="clearTasks()">
+                </div>
             </form>
 
             <ul id="todo-list"></ul>
@@ -26,4 +31,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
