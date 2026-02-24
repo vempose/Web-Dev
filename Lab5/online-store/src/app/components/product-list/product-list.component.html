@@ -1,15 +1,14 @@
-<header class="header">
-  <div class="container">
-    <h1>Kaspi Store</h1>
-  </div>
-</header>
-
 <main class="container">
   <div class="grid">
-    @for (product of productService.products(); track product.id) {
-      <app-product-card [product]="product"/>
+    @for (product of filteredProducts(); track product.id) {
+      <app-product-card
+        [product]="product"
+        [categoryName]="categoryService.getCategoryNameById(product.categoryId)"
+        (liked)="addLike($event)"
+        (removed)="removeProduct($event)"
+      />
     } @empty {
-      <p>No products available.</p>
+      <p>No products in this category</p>
     }
   </div>
 </main>

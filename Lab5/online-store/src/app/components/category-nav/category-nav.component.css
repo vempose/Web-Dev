@@ -1,0 +1,25 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.category-item {
+  text-transform: uppercase;
+}
+
+.category-item:hover {
+  cursor: pointer;
+}
+
+.category-nav {
+  padding-top: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.selected-category {
+  font-weight: bold;
+  color: #007aff;
+}

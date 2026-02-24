@@ -1,6 +1,7 @@
-import {Component, input, signal, computed, OnInit} from '@angular/core';
+import {Component, input, signal, computed, OnInit, output} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {Product} from '../../models/product.model';
+import {Category} from '../../models/category.model';
 import {ProductService} from '../../services/product.service';
 
 @Component({
@@ -12,10 +13,11 @@ import {ProductService} from '../../services/product.service';
 })
 export class ProductCardComponent implements OnInit {
   readonly product = input.required<Product>();
+  readonly categoryName = input.required<String>();
   readonly currentImage = signal<string>('');
 
   // just runs some code on initialization
-  // like constructor in initialization block in Java
+  // like constructor in an initialization block in Java
   ngOnInit() {
     const images = this.product().images;
     if (images && images.length > 0) {
@@ -82,9 +84,20 @@ export class ProductCardComponent implements OnInit {
   });
   protected readonly ProductService = ProductService;
 
-  favorite() {
-    let favoriteId = this.product().id;
+  isLiked = signal<boolean>(false);
+  animateLike = signal(false);
+  liked = output<Product>();
+  likeClicked() {
+    this.liked.emit(this.product());
+    this.isLiked.set(!this.isLiked());
+    this.animateLike.set(true);
+    setTimeout(() => this.animateLike.set(false), 300);
+  }
 
-    console.log("В избранном: " + favoriteId);
+  removed = output<Product>();
+  removeClicked() {
+    if (confirm("Are you sure you want to remove this product?")) {
+      this.removed.emit(this.product());
+    }
   }
 }

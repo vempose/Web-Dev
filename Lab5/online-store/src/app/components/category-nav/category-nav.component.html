@@ -1,0 +1,9 @@
+<nav class="category-nav container">
+    @for (category of categories(); track category.id) {
+      <a
+        class="category-item"
+        (click)="selectCategory(category)"
+        [class.selected-category]="selectedCategoryId() === category.id"
+      >{{category.name}}</a>
+    }
+</nav>

@@ -5,7 +5,7 @@ import {Product} from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
-  readonly products = signal<Product[]>([
+  products = signal<Product[]>([
     {
       "id": 1,
       "categoryId": 1,
