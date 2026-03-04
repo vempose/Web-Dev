@@ -1,0 +1,24 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.card > p {
+  margin-bottom: 1rem;
+}
+
+.primary-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  background: var(--primary-btn-bg);
+  color: #fff;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+}
+
+.primary-link:hover {
+  background: var(--primary-btn-hover-bg);
+}
