@@ -17,10 +17,10 @@
   @if (isLoading()) {
     <p role="status">Loading album details…</p>
   } @else {
-    @if (album(); as currentAlbum) {
+    @if (album()) {
       <div class="details-grid">
-        <p><strong>ID:</strong> {{ currentAlbum.id }}</p>
-        <p><strong>User ID:</strong> {{ currentAlbum.userId }}</p>
+        <p><strong>ID:</strong> {{ album()?.id }}</p>
+        <p><strong>User ID:</strong> {{ album()?.userId }}</p>
       </div>
 
       <form class="edit-form" (submit)="$event.preventDefault(); save()">
@@ -38,12 +38,11 @@
             type="submit"
             class="primary-button"
             [disabled]="!canSave()"
-            [attr.aria-busy]="isSaving()"
           >
             {{ isSaving() ? 'Saving…' : 'Save' }}
           </button>
 
-          <a [routerLink]="['/albums', currentAlbum.id, 'photos']" class="secondary-link">
+          <a [routerLink]="['/albums', album()?.id, 'photos']" class="secondary-link">
             View Photos
           </a>
         </div>

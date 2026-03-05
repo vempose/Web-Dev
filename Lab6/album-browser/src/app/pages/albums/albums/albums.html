@@ -14,7 +14,7 @@
       <p>No albums available.</p>
     } @else {
       <ul class="album-list">
-        @for (album of albums(); track trackByAlbumId($index, album)) {
+        @for (album of albums(); track album.id) {
           <li class="album-item">
             <a
               [routerLink]="['/albums', album.id]"

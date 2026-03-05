@@ -21,7 +21,7 @@
       <p>No photos found for this album.</p>
     } @else {
       <ul class="photo-grid">
-        @for (photo of photos(); track trackByPhotoId($index, photo)) {
+        @for (photo of photos(); track photo.id) {
           <li class="photo-card">
             <figure>
               <img

@@ -22,24 +22,17 @@ export class AlbumPhotos {
   readonly errorMessage = signal<string | null>(null);
 
   constructor() {
-    this.route.paramMap.pipe(map((params) => Number(params.get('id')))).subscribe((id) => {
-      this.albumId.set(id);
-      this.loadPhotos(id);
+    this.route.paramMap
+      .pipe(map(params => Number(params.get('id'))))
+      .subscribe(id => {
+        this.albumId.set(id);
+        this.loadPhotos(id);
     });
   }
 
   goBack(): void {
     const id = this.albumId();
-    if (!id) {
-      void this.router.navigate(['/albums']);
-      return;
-    }
-
-    void this.router.navigate(['/albums', id]);
-  }
-
-  trackByPhotoId(_: number, photo: Photo): number {
-    return photo.id;
+    this.router.navigate(['/albums', id]);
   }
 
   private loadPhotos(id: number): void {

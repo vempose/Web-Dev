@@ -53,9 +53,11 @@ export class AlbumDetail {
       }
     });
 
-    this.route.paramMap.pipe(map((params) => Number(params.get('id')))).subscribe((id) => {
-      this.albumId.set(id);
-      this.loadAlbum(id);
+    this.route.paramMap
+      .pipe(map(params => Number(params.get('id'))))
+      .subscribe(id => {
+        this.albumId.set(id);
+        this.loadAlbum(id);
     });
   }
 
@@ -65,7 +67,7 @@ export class AlbumDetail {
 
     const updatedAlbum: Album = {
       ...currentAlbum,
-      title: this.titleValue().trim(),
+      title: this.titleValue().trim()
     };
 
     this.isSaving.set(true);

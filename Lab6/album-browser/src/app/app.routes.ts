@@ -23,12 +23,10 @@ export const routes: Routes = [
   },
   {
     path: 'albums',
-    loadChildren: async () => [
+    children: [
       { path: '', component: Albums, title: 'Albums' },
-
-      { path: ':id/photos', component: AlbumPhotos, title: 'Album Photos' },
-
       { path: ':id', component: AlbumDetail, title: 'Album Detail' },
+      { path: ':id/photos', component: AlbumPhotos, title: 'Album Photos' },
     ],
   },
   {

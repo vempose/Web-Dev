@@ -57,10 +57,6 @@ export class Albums {
     return this.deletingIds().has(id);
   }
 
-  trackByAlbumId(_: number, album: Album): number {
-    return album.id;
-  }
-
   private setDeleting(id: number, value: boolean): void {
     this.deletingIds.update((current) => {
       const next = new Set(current);
