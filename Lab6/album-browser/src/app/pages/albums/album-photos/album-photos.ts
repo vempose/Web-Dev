@@ -32,7 +32,7 @@ export class AlbumPhotos {
 
   goBack(): void {
     const id = this.albumId();
-    this.router.navigate(['/albums', id]);
+    void this.router.navigate(['/albums', id]);
   }
 
   private loadPhotos(id: number): void {
