@@ -3,10 +3,10 @@ from models import Book, CompactDisk
 
 def main() -> None:
     products = [
-        Book("War and Peace", 25.99, 5, "Leo Tolstoy", "Russian classic"),
+        Book("The Martian", 17.99, 5, "Andy Weir", "Science fiction"),
         Book("Crime and Punishment", 18.50, 3, "Fyodor Dostoevsky", "Russian classic"),
-        CompactDisk("The Eminem Show", 14.99, 4, "Eminem", "Hip-hop"),
-        CompactDisk("Recovery", 12.99, 2, "Eminem", "Hip-hop"),
+        CompactDisk("The Fall-Off", 14.99, 4, "J. Cole", "Hip-hop"),
+        CompactDisk("Ultra 85", 12.99, 2, "LOGIC", "Hip-hop"),
     ]
 
     print("## Product List ##")
