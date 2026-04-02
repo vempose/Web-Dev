@@ -5,7 +5,7 @@ class Category(models.Model):
     name = models.CharField(max_length=200, unique=True)
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["id"]
         verbose_name = "Category"
         verbose_name_plural = "Categories"
 
@@ -22,7 +22,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="products")
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["id"]
         verbose_name = "Product"
         verbose_name_plural = "Products"
 
