@@ -1,0 +1,361 @@
+from django.core.management.base import BaseCommand
+
+from api.models import Category, Product
+
+
+class Command(BaseCommand):
+    help = "Create mock categories and products"
+
+    def handle(self, *args, **options):
+        categories_data = [
+            "Music",
+            "Books",
+            "Games",
+            "Accessories",
+            "Electronics",
+            "Home",
+            "Fitness",
+            "Outdoors",
+        ]
+
+        categories = {}
+        for category_name in categories_data:
+            category, _ = Category.objects.get_or_create(name=category_name)
+            categories[category_name] = category
+
+        products_data = [
+            {
+                "name": "Electric Guitar",
+                "price": "799.99",
+                "description": "Six-string electric guitar for rock and blues.",
+                "count": 5,
+                "is_active": True,
+                "category": categories["Music"],
+            },
+            {
+                "name": "Acoustic Guitar",
+                "price": "499.99",
+                "description": "Warm sounding acoustic guitar.",
+                "count": 7,
+                "is_active": True,
+                "category": categories["Music"],
+            },
+            {
+                "name": "Digital Piano",
+                "price": "999.99",
+                "description": "88-key digital piano for beginners and pros.",
+                "count": 3,
+                "is_active": True,
+                "category": categories["Music"],
+            },
+            {
+                "name": "Studio Headphones",
+                "price": "199.99",
+                "description": "Closed-back headphones for studio monitoring.",
+                "count": 12,
+                "is_active": True,
+                "category": categories["Music"],
+            },
+            {
+                "name": "USB Microphone",
+                "price": "149.99",
+                "description": "Microphone for podcasting and home recording.",
+                "count": 10,
+                "is_active": True,
+                "category": categories["Music"],
+            },
+            {
+                "name": "Fantasy Novel",
+                "price": "24.99",
+                "description": "Epic fantasy story with dragons and magic.",
+                "count": 20,
+                "is_active": True,
+                "category": categories["Books"],
+            },
+            {
+                "name": "Science Fiction Book",
+                "price": "19.99",
+                "description": "A journey through space and time.",
+                "count": 15,
+                "is_active": True,
+                "category": categories["Books"],
+            },
+            {
+                "name": "Python Programming Guide",
+                "price": "34.99",
+                "description": "Learn Python from basics to advanced concepts.",
+                "count": 8,
+                "is_active": True,
+                "category": categories["Books"],
+            },
+            {
+                "name": "History Encyclopedia",
+                "price": "39.99",
+                "description": "Illustrated encyclopedia of world history.",
+                "count": 6,
+                "is_active": True,
+                "category": categories["Books"],
+            },
+            {
+                "name": "Mystery Detective Book",
+                "price": "17.99",
+                "description": "A suspenseful detective story.",
+                "count": 14,
+                "is_active": True,
+                "category": categories["Books"],
+            },
+            {
+                "name": "Chess Set",
+                "price": "29.99",
+                "description": "Classic wooden chess set.",
+                "count": 9,
+                "is_active": True,
+                "category": categories["Games"],
+            },
+            {
+                "name": "Gaming Mouse",
+                "price": "59.99",
+                "description": "Ergonomic mouse with RGB lighting.",
+                "count": 18,
+                "is_active": True,
+                "category": categories["Games"],
+            },
+            {
+                "name": "Mechanical Keyboard",
+                "price": "89.99",
+                "description": "Gaming keyboard with tactile switches.",
+                "count": 11,
+                "is_active": True,
+                "category": categories["Games"],
+            },
+            {
+                "name": "Console Controller",
+                "price": "69.99",
+                "description": "Wireless controller for console gaming.",
+                "count": 13,
+                "is_active": True,
+                "category": categories["Games"],
+            },
+            {
+                "name": "Board Game Strategy Pack",
+                "price": "44.99",
+                "description": "Strategy board game for family evenings.",
+                "count": 7,
+                "is_active": True,
+                "category": categories["Games"],
+            },
+            {
+                "name": "Vinyl Record Sleeve Pack",
+                "price": "12.99",
+                "description": "Protective sleeves for vinyl records.",
+                "count": 25,
+                "is_active": True,
+                "category": categories["Accessories"],
+            },
+            {
+                "name": "Bookmark Set",
+                "price": "7.99",
+                "description": "Colorful bookmark collection for readers.",
+                "count": 30,
+                "is_active": True,
+                "category": categories["Accessories"],
+            },
+            {
+                "name": "Game Storage Case",
+                "price": "18.99",
+                "description": "Storage case for game discs and cartridges.",
+                "count": 16,
+                "is_active": True,
+                "category": categories["Accessories"],
+            },
+            {
+                "name": "Sheet Music Stand",
+                "price": "27.99",
+                "description": "Foldable stand for sheet music and notes.",
+                "count": 10,
+                "is_active": True,
+                "category": categories["Accessories"],
+            },
+            {
+                "name": "Reading Lamp",
+                "price": "22.99",
+                "description": "Clip-on lamp for comfortable night reading.",
+                "count": 19,
+                "is_active": True,
+                "category": categories["Accessories"],
+            },
+            {
+                "name": "Bluetooth Speaker",
+                "price": "129.99",
+                "description": "Portable speaker with deep bass and all-day battery life.",
+                "count": 14,
+                "is_active": True,
+                "category": categories["Electronics"],
+            },
+            {
+                "name": "Smart Watch",
+                "price": "249.99",
+                "description": "Fitness-focused smartwatch with sleep and heart-rate tracking.",
+                "count": 9,
+                "is_active": True,
+                "category": categories["Electronics"],
+            },
+            {
+                "name": "Wireless Charger",
+                "price": "39.99",
+                "description": "Fast wireless charging pad for phones and earbuds.",
+                "count": 22,
+                "is_active": True,
+                "category": categories["Electronics"],
+            },
+            {
+                "name": "4K Webcam",
+                "price": "89.99",
+                "description": "High-resolution webcam for meetings and streaming.",
+                "count": 11,
+                "is_active": True,
+                "category": categories["Electronics"],
+            },
+            {
+                "name": "Portable SSD 1TB",
+                "price": "159.99",
+                "description": "Compact external solid-state drive for backups and travel.",
+                "count": 8,
+                "is_active": True,
+                "category": categories["Electronics"],
+            },
+            {
+                "name": "Ceramic Dinner Set",
+                "price": "74.99",
+                "description": "Twelve-piece dinnerware set with a modern matte finish.",
+                "count": 6,
+                "is_active": True,
+                "category": categories["Home"],
+            },
+            {
+                "name": "Throw Blanket",
+                "price": "34.99",
+                "description": "Soft woven blanket for couches, beds, and reading corners.",
+                "count": 17,
+                "is_active": True,
+                "category": categories["Home"],
+            },
+            {
+                "name": "Aroma Diffuser",
+                "price": "27.99",
+                "description": "Ultrasonic diffuser with soft ambient lighting.",
+                "count": 15,
+                "is_active": True,
+                "category": categories["Home"],
+            },
+            {
+                "name": "Wall Art Print Set",
+                "price": "45.99",
+                "description": "Framed abstract prints designed for living rooms and offices.",
+                "count": 10,
+                "is_active": True,
+                "category": categories["Home"],
+            },
+            {
+                "name": "Indoor Plant Pot Trio",
+                "price": "31.99",
+                "description": "Set of three ceramic pots for herbs and small houseplants.",
+                "count": 13,
+                "is_active": True,
+                "category": categories["Home"],
+            },
+            {
+                "name": "Yoga Mat",
+                "price": "28.99",
+                "description": "Non-slip mat with extra cushioning for yoga and stretching.",
+                "count": 21,
+                "is_active": True,
+                "category": categories["Fitness"],
+            },
+            {
+                "name": "Adjustable Dumbbell",
+                "price": "119.99",
+                "description": "Space-saving dumbbell with multiple weight settings.",
+                "count": 7,
+                "is_active": True,
+                "category": categories["Fitness"],
+            },
+            {
+                "name": "Resistance Band Set",
+                "price": "24.99",
+                "description": "Five resistance levels for home workouts and recovery.",
+                "count": 18,
+                "is_active": True,
+                "category": categories["Fitness"],
+            },
+            {
+                "name": "Foam Roller",
+                "price": "21.99",
+                "description": "Textured roller for mobility work and muscle recovery.",
+                "count": 16,
+                "is_active": True,
+                "category": categories["Fitness"],
+            },
+            {
+                "name": "Jump Rope",
+                "price": "14.99",
+                "description": "Lightweight speed rope for cardio sessions anywhere.",
+                "count": 25,
+                "is_active": True,
+                "category": categories["Fitness"],
+            },
+            {
+                "name": "Camping Tent",
+                "price": "189.99",
+                "description": "Four-person weather-resistant tent for weekend camping trips.",
+                "count": 5,
+                "is_active": True,
+                "category": categories["Outdoors"],
+            },
+            {
+                "name": "Insulated Water Bottle",
+                "price": "26.99",
+                "description": "Stainless steel bottle that keeps drinks cold for hours.",
+                "count": 24,
+                "is_active": True,
+                "category": categories["Outdoors"],
+            },
+            {
+                "name": "Hiking Backpack",
+                "price": "94.99",
+                "description": "Lightweight trail backpack with hydration sleeve support.",
+                "count": 9,
+                "is_active": True,
+                "category": categories["Outdoors"],
+            },
+            {
+                "name": "Picnic Basket",
+                "price": "52.99",
+                "description": "Woven picnic basket with utensils for two people.",
+                "count": 8,
+                "is_active": True,
+                "category": categories["Outdoors"],
+            },
+            {
+                "name": "Portable Camp Lantern",
+                "price": "33.99",
+                "description": "Rechargeable lantern with adjustable brightness modes.",
+                "count": 12,
+                "is_active": True,
+                "category": categories["Outdoors"],
+            },
+        ]
+
+        created_products = 0
+        for product_data in products_data:
+            _, created = Product.objects.get_or_create(
+                name=product_data["name"],
+                defaults=product_data,
+            )
+            if created:
+                created_products += 1
+
+        self.stdout.write(self.style.SUCCESS("Mock data command completed successfully."))
+        self.stdout.write(self.style.SUCCESS(f"Categories available: {Category.objects.count()}"))
+        self.stdout.write(self.style.SUCCESS(f"Products created now: {created_products}"))
+        self.stdout.write(self.style.SUCCESS(f"Total products in database: {Product.objects.count()}"))
